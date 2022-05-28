@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:#222;
+}
+body.on{
+    background: radial-gradient(#f5fdff, #000);
+}
+.foco{
+    position:relative;
+    width: 80px;
+    height:80px;
+    background:#444;
+    border-radius: 50%;
+    z-index: 2;
+}
+.foco::before{
+    content:'';
+    position:absolute;
+    left:22.5px;
+    width:35px;
+    height:80px;
+    background:#444;
+    top: -50px;
+    border-top: 30px solid #000;
+    border-radius: 10px;
+}
+body.on .foco::before{
+    background:#fff;
+}
+
+body.on .foco{
+    background:#fff;
+    box-shadow:0 0 50px #dddddd,
+    0 0 100px #dddddd,
+    0 0 150px #dddddd,
+    0 0 200px #dddddd,
+    0 0 250px #dddddd,
+    0 0 300px #dddddd,
+    0 0 350px #dddddd;
+}
+body.on .foco::after{
+    content:'';
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:120px;
+    height:120px;
+    background:#dddddd;
+    border-radius: 50%;
+    filter: blur(40px);
+}
+
+.foco span:nth-child(1){
+    position:absolute;
+    top:-16px;
+    left:-4px;
+    display: block;
+    width:30px;
+    height:30px;
+    background: transparent;
+    transform:rotate(342deg);
+    border-bottom-right-radius:40px;
+    box-shadow:20px 20px 0 10px #444;
+
+}
+body.on .foco span:nth-child(1){
+    box-shadow:20px 20px 0 10px #fff;
+}
+.foco span:nth-child(2){
+    position:absolute;
+    top:-16px;
+    right:-4px;
+    display: block;
+    width:30px;
+    height:30px;
+    background: transparent;
+    transform:rotate(17deg);
+    border-bottom-left-radius:40px;
+    box-shadow:-20px 20px 0 10px #444;
+
+}
+body.on .foco span:nth-child(2){
+    box-shadow:-20px 20px 0 10px #fff;
+}
+.cable{
+    position:absolute;
+    left: calc(50% - 2px);
+    bottom: 50%;
+    width: 4px;
+    height: 60vh;
+    background:#000;
+    z-index: 1;
+}
+
+/* From uiverse.io by @Jay-9527 */
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: absolute;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    bottom: 50px;
+    right: 50px;
+   }
+   
+   /* Hide default HTML checkbox */
+   .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+   }
+   
+   /* The slider */
+   .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 30px;
+   }
+   
+   .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: white;
+    transition: .4s;
+   }
+   
+   input:checked + .slider {
+    background-color: rgb(0,221,80);
+   }
+   
+   input:focus + .slider {
+    box-shadow: 0 0 1px rgb(0,221,80);
+   }
+   
+   input:checked + .slider:before {
+    transform: translateX(1.5em);
+   }
+
+   
